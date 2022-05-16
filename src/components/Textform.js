@@ -10,6 +10,8 @@ const handleUpChange=()=>{
     console.log(newText) 
     setText(newText);
   console.log("Button clicked");
+  props.showAlert('Text Converted to UpperCase','Success')
+  
  
 }
 
@@ -20,11 +22,15 @@ const handleLoChange=()=>{
   setText(newText);
 console.log("Button clicked");
 
+props.showAlert('Text Converted to LowerCase','Success')
+  
 }
 
 const clr=()=>{
   //uppercase wala button hai
  setText('')
+ 
+props.showAlert('Text Cleared','Success')
 ;
 }
 const handleOnChange=(event)=>{
@@ -37,14 +43,14 @@ const handleOnChange=(event)=>{
   // setText(text)
   return (
     <>
-  <div className="container"  /*</>style={{color:props.mode==='dark'?'white':'dark',backgroundColor:props.mode==='dark'?'white':'dark'}}*/>
+  <div className="container" >
   <h1 >{props.heading}</h1>
       <div className="my-2">
         <textarea
           className="form-control"
              value={text}
           onChange={handleOnChange}
-          style={{/*color:props.mode==='dark'?'white':'dark'*/}}
+          
           id="mytxt"
           rows="8"
         ></textarea>
@@ -69,7 +75,7 @@ const handleOnChange=(event)=>{
           <h1>Text summary</h1>
           <p>{text.split(" ").length} words and {text.length}  characters</p>
           <h1>Preview</h1>  
-          <p>{text.length>0?text:'Enter something to preview'}</p>
+          <p>{text.length>0?text:'Enter something to '}</p>
   </div>
         
     </>
