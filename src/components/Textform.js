@@ -4,8 +4,6 @@ import React , {useState} from 'react';
 export default function Textform(props) {
   const [text,setText] = useState('');
 
-
-  
 const handleUpChange=()=>{
     //uppercase wala button hai
     let newText =text.toUpperCase();
@@ -39,12 +37,14 @@ const handleOnChange=(event)=>{
   // setText(text)
   return (
     <>
-      <h1>{props.heading}</h1>
+  <div className="container"  /*</>style={{color:props.mode==='dark'?'white':'dark',backgroundColor:props.mode==='dark'?'white':'dark'}}*/>
+  <h1 >{props.heading}</h1>
       <div className="my-2">
         <textarea
           className="form-control"
              value={text}
           onChange={handleOnChange}
+          style={{/*color:props.mode==='dark'?'white':'dark'*/}}
           id="mytxt"
           rows="8"
         ></textarea>
@@ -65,12 +65,13 @@ const handleOnChange=(event)=>{
       Clear text
       </button>
       </div>
-          <div className="container">
+        
           <h1>Text summary</h1>
           <p>{text.split(" ").length} words and {text.length}  characters</p>
           <h1>Preview</h1>  
-          <p>{text}</p>
-        </div>
+          <p>{text.length>0?text:'Enter something to preview'}</p>
+  </div>
+        
     </>
   );
 }
