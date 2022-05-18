@@ -43,14 +43,14 @@ const handleOnChange=(event)=>{
   // setText(text)
   return (
     <>
-  <div className="container" >
+  <div className="container" style={{color: props.mode==='dark'?'#ebedef':'dark'}}>
   <h1 >{props.heading}</h1>
       <div className="my-2">
         <textarea
           className="form-control"
              value={text}
           onChange={handleOnChange}
-          
+          style={{ backgroundColor: props.mode==='dark'?'grey':'white', color:props.mode=== 'dark'?'white':'dark'}}
           id="mytxt"
           rows="8"
         ></textarea>
