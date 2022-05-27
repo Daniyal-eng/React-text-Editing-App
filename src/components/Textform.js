@@ -50,25 +50,28 @@ const handleOnChange=(event)=>{
           className="form-control"
              value={text}
           onChange={handleOnChange}
-          style={{ backgroundColor: props.mode==='dark'?'grey':'white', color:props.mode=== 'dark'?'white':'dark'}}
+          style={{ backgroundColor: props.mode==='dark'?'white':'grey', color:props.mode=== 'dark'?'white':'dark'}}
           id="mytxt"
           rows="8"
         ></textarea>
         <br></br>
-        <button className="btn btn-secondary mx-3"
+        <button className="btn btn-secondary mx-3  my-2"
+         style={{ backgroundColor: props.mode==='dark'?'white':'grey', color:props.mode=== 'dark'?'white':'dark'}}
             onClick={handleUpChange}
             id='btnUp'
         >
         Convert to UpperCase
       </button>
-      <button className="btn btn-secondary"
+      <button className="btn btn-secondary my-2"
+       style={{ backgroundColor: props.mode==='dark'?'white':'grey', color:props.mode=== 'dark'?'white':'dark'}}
             onClick={handleLoChange}
             id='btnlow'
 
         >
         Convert to LowerCase
       </button>
-      <button className="btn btn-secondary mx-3"
+      <button className="btn btn-secondary mx-3 my-2"
+       style={{ backgroundColor: props.mode==='dark'?'white':'grey', color:props.mode=== 'dark'?'white':'dark'}}
             onClick={clr}
             id='btnclr'
 
@@ -78,7 +81,7 @@ const handleOnChange=(event)=>{
       </div>
         
           <h1>Text summary</h1>
-          <p>{text.split(" ").length} words and {text.length}  characters</p>
+          <p>{text.split(" ").filter((element)=>{return element.length!==0 }).length}  words and {text.length}  characters</p>
           <h1>Preview</h1>  
           <p>{text.length>0?text:'Enter something to '}</p>
   </div>

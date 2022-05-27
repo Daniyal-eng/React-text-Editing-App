@@ -18,31 +18,62 @@ function App() {
     });
     setInterval(() => {
       setAlert(null);
-    }, 1500);
+    }, 3000);
   };
+ const RemoveClasses =()=>{
+   document.body.classList.remove('bg-light')
+   document.body.classList.remove('bg-secondary')
+   document.body.classList.remove('bg-success')
+   document.body.classList.remove('bg-danger')
+   document.body.classList.remove('bg-warning')
+   document.body.classList.remove('bg-info')
 
-  const toggleMode = () => {
-    if (Mode === "light") {
-      setMode("dark");
+ }
+  const toggleMode = (cls) => {
+    RemoveClasses();
+    document.body.classList.add('bg-'+cls);
+    if (Mode === "secondary") {
+     // setMode("dark");
       document.body.style.backgroundColor = "rgb(73, 70, 70)";
       document.getElementById("lbID").innerHTML = "Enable light Mode";
-      showAlert("Dark Mode Enabled", "Success");
+      showAlert("Mode has been changed", "Success");
       document.title = "Dark Mode_Enabled";
+     
+    
+     
       let btn_Update = document.getElementById("btnUp");
       let btn_low = document.getElementById("btnlow");
       let btn_clr = document.getElementById("btnclr");
-      btn_Update.style.backgroundColor = "#6c757d";
+      btn_Update.style.backgroundColor = "bg-primary";
       btn_Update.style.color = "rgb(240, 248, 255)";
       btn_low.style.backgroundColor = "#6c757d";
       btn_low.style.color = "rgb(240, 248, 255)";
       btn_clr.style.backgroundColor = "#6c757d";
       btn_clr.style.color = "rgb(240, 248, 255)";
     } else {
+
+
+
       setMode("light");
       document.body.style.backgroundColor = "#d0d7d1";
       document.getElementById("lbID").innerHTML = "Enable Dark Mode";
       showAlert("Light Mode Enabled", "Success");
       document.title = "light Mode_Enabled";
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
       // let btn_Update = document.getElementById("btnUp");
       // let btn_low = document.getElementById("btnlow");
       // let btn_clr = document.getElementById("btnclr");
