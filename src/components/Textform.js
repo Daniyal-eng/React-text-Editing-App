@@ -83,7 +83,7 @@ const handleOnChange=(event)=>{
           <h1>Text summary</h1>
           <p>{text.split(" ").filter((element)=>{return element.length!==0 }).length}  words and {text.length}  characters</p>
           <h1>Preview</h1>  
-          <p>{text.length>0?text:'Enter something to '}</p>
+          <p>{text.length>0?text:'Enter something to preview '}</p>
   </div>
         
     </>
